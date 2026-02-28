@@ -6,7 +6,7 @@ def search_rotated_sorted_array(arr, target):
         mid = (low + high) // 2
 
         if arr[mid] == target:
-            return 1
+            return mid
 
     
         if arr[low] <= arr[mid]:
@@ -20,8 +20,9 @@ def search_rotated_sorted_array(arr, target):
                 low = mid + 1
             else:
                 high = mid - 1
+        
 
-    return 0
+    return -1
 
 
 print(search_rotated_sorted_array([4,5,6,7,0,1,2], 0))
