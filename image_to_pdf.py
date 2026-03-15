@@ -1,7 +1,10 @@
 from PIL import Image
 
-images = [  "img1.jpeg"]
+images = [  "id1.jpg","id2.jpg"]
 
 image_list = [Image.open(img).convert("RGB") for img in images]
 
-image_list[0].save("Bonafide.pdf", save_all=True, append_images=image_list[1:])
+image_list[0].save("identity.pdf", save_all=True, append_images=image_list[1:])
+
+
+
