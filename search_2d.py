@@ -8,19 +8,22 @@ def search_matrix(matrix, target):
     high = rows * cols - 1
 
     while low <= high:
-        mid = (low + high) // 2
+       
 
-        row = mid // 2
-        col = mid //2
+        row=-(rows//2)
+        col=-(cols//2)
 
-        mid_element = matrix[row][col]
+        mid_element = matrix[row-1][col-1]
 
         if mid_element == target:
             return True
-        elif mid_element < target:
-            low = mid + 1
+        elif mid_element >target:
+            row=-(row//2)
+            col=-(col//2)
         else:
-            high = mid - 1
+            row=row*2
+            col=col*2
+            
 
     return False
 

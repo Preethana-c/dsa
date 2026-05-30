@@ -1,4 +1,23 @@
 def merge_intervals(arr):
+    arr.sort()
+    result=[]
+    for i in arr:
+        for j in range(i+1,len(arr)):
+            if arr[i][0]<=arr[j][1] and arr[j][0]<=arr[i][1]:
+                arr[i][0]=min(arr[i][0],arr[j][0])
+                arr[i][1]=max(arr[i][1],arr[j][1])
+        if arr[i] not in result:
+            result.append(arr[i])
+    return result
+
+
+
+
+
+
+
+
+'''def merge_intervals(arr):
     result=[]
     for i in arr:
         for j in i:
@@ -8,7 +27,7 @@ def merge_intervals(arr):
                        i[-1]=max(i[-1],k[-1])
         if i not in result:
             result.append(i) 
-    return result
+    return result'''
            
             
             

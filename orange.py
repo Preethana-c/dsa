@@ -20,7 +20,7 @@ def rotten_orange(matrix, queue_a):
     while queue_a and count> 0:
         size = len(queue_a)
 
-        for _ in range(size):
+        for a in range(size):
             i, j = queue_a.pop(0)
 
             if i-1 >= 0 and matrix[i-1][j] == 1:
